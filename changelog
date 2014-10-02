@@ -1,0 +1,28 @@
+r2:
+
+	Notes:
+	-Waveform:
+		-added waveform viewer, to switch between launching waveform viewer or level meter, comment out the relevant option
+		in the main function at the bottom of main.
+		-waveform viewer only reads directly from buffer at the moment, does not request samples from library
+		-waveform viewer is drawn with points and lines
+	-Truncate function:
+		-added two functions, one to return the index in the sample at where the sample first goes from negative to positive,
+		and one which should return an array of the original sample which has been truncated to the first negative to positive section.
+	
+	Known bugs:
+	-Currently the truncate function doesn't return the correct chunk of memory, appears to return the same chunk that you send it
+	
+	Fixes:
+	-One Poll Peak average now working with AnalysisDLL struct.
+	-Can now calculate n channels gui without needing to pass in which channel you are from.
+
+r1:
+
+	Notes:
+	-first push of code
+	
+	Known bugs/Areas for improvement:
+	-One Poll Peak average not working properly due to AnalysisDLL struct not retaining average value between calls.
+	-Began implementing n channels gui, need to fix AnalysisDLL struct so that we can calculate multiple channels 
+	values without having to pass in the current channel as a parameter.
